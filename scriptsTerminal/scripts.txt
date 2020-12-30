@@ -1,0 +1,37 @@
+/*** DOCKER ***/
+
+* Container Postgres
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d --restart always postgres
+* Container MongoDB
+docker run --name mongobarber -p 27017:27017 -d --restart always -t mongo
+* Container Redis
+docker run --name redisbarber -p 6379:6379 -d --restart always -t redis:alpine
+
+-> Remover Image/Container
+docker rmi <nameImage> --force
+docker container rm <nameContainer>
+
+/*** GIT ***/
+
+* Limpar Cache Ex.: gitignore
+git rm -r --cached .
+
+* Add Repositorio Remoto
+git remote add rocketseat https://github.com/LucasHolanda/rocketseat.git
+
+* Clonar Repositorio
+git clone https://github.com/LucasHolanda/rocketseat.git <criarNovaPastaOpcional>
+
+* Criar Branch e depois da Merge para Master e deletar Branch
+git checkout -b desenv_func_teste
+git commit -am "texto da msg"
+git checkout master
+git merge desenv_func_teste
+git branch -d desenv_func_teste
+
+* Enviar alteracoes para o repositorio remoto no GitHub
+git push <nome-repositorio-github> master
+
+* Comparar Branchs
+git diff <branch origem> <branch destino>
+
